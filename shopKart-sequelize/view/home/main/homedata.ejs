@@ -1,0 +1,18 @@
+<div class="mainbox">
+    <% if(data.length > 0) { %> 
+    <% for(let i =0; i< data.length; i++ ) { %>
+    <div class="card">
+        <p><span>S NO: </span> <%= i+1 %> </p>
+        <p><span>productname: </span> <%= data[i].productname %> </p>
+        <p><span>price: </span> <%= data[i].price %> </p>
+        <p><span>description: </span> <%= data[i].description %> </p>
+        <form method="POST" action="/cart/<%= data[i].id %>"> 
+            <input type="submit" value="add item"> 
+        </form>
+        <!-- <a href="/cart/<%= data[i].id %>">add item</a> -->
+    </div>
+    <% } } else { %>
+        <div class="noitem">no item in the shop</div>
+    <% } %>
+
+</div>

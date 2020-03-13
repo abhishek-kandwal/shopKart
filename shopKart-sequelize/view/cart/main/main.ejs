@@ -1,0 +1,32 @@
+<div>
+    <% if(data.length > 0) { %>
+    <% for(let i =0; i< data.length; i++ ) { %>
+    <div class="card">
+        <p><span>S NO: </span> <%= i+1 %> </p>
+        <p><span>quantity: </span> <%= data[i].quantity %> </p>
+        <p><span>productname: </span> <%= data[i].productname %> </p>
+        <p><span>price: </span> <%= data[i].price %> </p>
+        <p><span>description: </span> <%= data[i].description %> </p>
+        <div class="cartbutton">
+            <form method="POST" action="/cart/remove/<%= data[i].id %>">
+                <input type="submit" value="remove item">
+            </form>
+        </div>
+        <div class="cartbutton">
+            <form method="POST" action="/cart/addmore/<%= data[i].id %>">
+                <input type="submit" value="item +1">
+            </form>
+        </div>
+        <div class="cartbutton">
+            <% if(data[i].quantity > 1) { %>
+            <form method="POST" action="/cart/submore/<%= data[i].id %>">
+                <input type="submit" value="item -1">
+            </form>
+            <% } %>
+        </div>
+    </div>
+    <% } %>
+    <% } else { %>
+    <div class="noitem">no item in your cart</div>
+    <% } %>
+</div>
