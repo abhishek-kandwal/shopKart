@@ -1,0 +1,57 @@
+.admin_form{
+    padding-top:20px ;
+    padding-left:40% ;
+}
+
+.card{
+    width: 20%;
+    height: 250px;
+    float: left;
+    display: block;
+    background-color: cornsilk;
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    border: 1px solid black
+}
+
+.noitem{
+    width: 98%;
+    height: 40px;
+    display: block;
+    margin: 10px;
+    margin-bottom: 10px;
+    padding: 5% 40% 5% 40%;
+    background-color: cornsilk;
+    border: 1px solid black;
+}
+
+.footer{
+    /* width: 90%;
+    height: 20px;
+    padding:  5% 40% 5% 40%;
+    margin: 10px;
+    background-color: chocolate;
+    border: 1px solid black;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    left: 0; */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.mainbox{
+    margin-bottom: 20px;
+}
+
+.cartbutton{
+    float: left;
+}

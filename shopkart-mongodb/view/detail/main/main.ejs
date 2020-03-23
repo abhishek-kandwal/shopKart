@@ -1,0 +1,16 @@
+<div class="mainbox">
+    <% if(data.length > 0) { %> 
+    <div class="card">
+        <p><span>producttitle: </span> <%= data[0].title %> </p>
+        <p><span>productname: </span> <%= data[0].productname %> </p>
+        <p><span>price: </span> <%= data[0].price %> </p>
+        <p><span>description: </span> <%= data[0].description %> </p>
+        <form method="POST" action="/cart/<%= data[0]._id %>"> 
+            <input type="submit" value="add item"> 
+        </form>
+    </div>
+    <%  } else { %>
+        <div class="noitem">no item for review</div>
+    <% } %>
+
+</div>
