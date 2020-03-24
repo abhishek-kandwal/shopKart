@@ -44,34 +44,24 @@ exports.removeitem = (req,res,next)=>{
 
 }
 
-// exports.addmore = (req,res,next)=>{
+exports.addmore = (req,res,next)=>{
 
-//     cartModel.increment({
-//         quantity: 1
-//     } , {
-//         where : {
-//             id : req.params.product_id
-//         }
-//     } ).then(() => {
-//         res.redirect('/cart');
-//     }).catch(err => {
-//         console.log(err);
-//     });
+    cartModel.addmore(req.params.product_id
+        ).then(() => {
+        res.redirect('/cart');
+    }).catch(err => {
+        console.log(err);
+    });
 
-// }
+}
 
-// exports.submore = (req,res,next)=>{
+exports.submore = (req,res,next)=>{
     
-//     cartModel.decrement({
-//         quantity: 1
-//     } , {
-//         where : {
-//             id : req.params.product_id
-//         }
-//     } ).then(() => {
-//         res.redirect('/cart');
-//     }).catch(err => {
-//         console.log(err);
-//     });
+    cartModel.submore(req.params.product_id)
+    .then(() => {
+        res.redirect('/cart');
+    }).catch(err => {
+        console.log(err);
+    });
 
-//}
+}
