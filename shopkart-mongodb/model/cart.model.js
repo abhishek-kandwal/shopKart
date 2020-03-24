@@ -45,7 +45,6 @@ const Cart = class cart {
         .find({_id : new mongodb.ObjectId(id)})
         .toArray()
         .then( productItem => {
-            console.log(productItem[0].quantity);
             productItem[0].quantity += 1;
           return  db.collection('cart')
             .updateOne({_id : new mongodb.ObjectId(id)},{$set: {
@@ -64,7 +63,6 @@ const Cart = class cart {
         .find({_id : new mongodb.ObjectId(id)})
         .toArray()
         .then( productItem => {
-            console.log(productItem[0].quantity);
             productItem[0].quantity -= 1;
           return  db.collection('cart')
             .updateOne({_id : new mongodb.ObjectId(id)},{$set: {
