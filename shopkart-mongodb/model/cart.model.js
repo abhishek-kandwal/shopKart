@@ -38,6 +38,42 @@ const Cart = class cart {
         .then(() => console.log("removed"))
         .catch(err => console.log(err));
     }
+    
+        static addmore(id){
+        const db = getdb();
+        return db.collection('cart')
+        .find({_id : new mongodb.ObjectId(id)})
+        .toArray()
+        .then( productItem => {
+            console.log(productItem[0].quantity);
+            productItem[0].quantity += 1;
+          return  db.collection('cart')
+            .updateOne({_id : new mongodb.ObjectId(id)},{$set: {
+                quantity : productItem[0].quantity
+            } })
+        })
+        .catch(err => console.log(err));
+        
+    }
+
+    
+
+    static submore(id){
+        const db = getdb();
+        return db.collection('cart')
+        .find({_id : new mongodb.ObjectId(id)})
+        .toArray()
+        .then( productItem => {
+            console.log(productItem[0].quantity);
+            productItem[0].quantity -= 1;
+          return  db.collection('cart')
+            .updateOne({_id : new mongodb.ObjectId(id)},{$set: {
+                quantity : productItem[0].quantity
+            } })
+        })
+        .catch(err => console.log(err));
+        
+    }
 }
 
 module.exports = Cart;
